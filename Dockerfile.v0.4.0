@@ -36,9 +36,9 @@ RUN sudo apt -y install --no-install-recommends \
 
 RUN sudo apt-get clean
 
-RUN echo "export CUDA_HOME=/usr/local/cuda-11.7" >> /etc/bash.bashrc
+RUN echo "export CUDA_HOME=/usr/local/cuda-11.6" >> /etc/bash.bashrc
  
-ENV CUDA_HOME=/usr/local/cuda-11.7
+ENV CUDA_HOME=/usr/local/cuda-11.6
 
 RUN conda init bash
 
@@ -72,8 +72,6 @@ RUN python3 -m unittest
 
 RUN python3 -m pip install --no-cache-dir nni==2.7 tqdm "typeguard<3" filelock==3.10 jupyterlab notebook ipywidgets
 
-RUN echo "export CUDA_HOME=/usr/local/cuda-11.6" >> /etc/bash.bashrc
- 
-ENV CUDA_HOME=/usr/local/cuda-11.6
+
 
 WORKDIR /root
