@@ -36,6 +36,10 @@ RUN sudo apt -y install --no-install-recommends \
 
 RUN sudo apt-get clean
 
+RUN echo "export CUDA_HOME=/usr/local/cuda-11.7" >> /etc/bash.bashrc
+ 
+ENV CUDA_HOME=/usr/local/cuda-11.7
+
 RUN conda init bash
 
 RUN /opt/conda/bin/python3 -m pip install --upgrade pip
