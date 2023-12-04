@@ -38,6 +38,10 @@ RUN sudo apt-get clean
 
 RUN conda init bash
 
+RUN echo "export CUDA_HOME=/usr/local/cuda-11.7" >> /etc/bash.bashrc
+ 
+ENV CUDA_HOME=/usr/local/cuda-11.7
+
 RUN /opt/conda/bin/python3 -m pip install --upgrade pip
 
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
@@ -68,8 +72,5 @@ RUN python3 -m unittest
 
 RUN python3 -m pip install --no-cache-dir nni==2.7 tqdm "typeguard<3" filelock==3.10 jupyterlab notebook ipywidgets
 
-RUN echo "export CUDA_HOME=/usr/local/cuda-11.7" >> /etc/bash.bashrc
- 
-ENV CUDA_HOME=/usr/local/cuda-11.7
 
 WORKDIR /root
