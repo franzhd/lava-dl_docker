@@ -6,7 +6,7 @@ if [ $# -eq 0 ]; then
 fi
 
 arg1="$1"
-image_version = "Dockerimage.${arg1}"
+image_version = "Dockerfile.${arg1}"
 
 echo "building $image_version docker with image name franzhd/lava"
 
