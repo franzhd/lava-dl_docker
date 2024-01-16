@@ -70,7 +70,7 @@ WORKDIR /root/lava
 
 RUN python3 -m unittest
 
-RUN python3 -m pip install --no-cache-dir nni==2.7 tqdm "typeguard<3" filelock==3.10 jupyterlab notebook ipywidgets
+RUN python3 -m pip install --no-cache-dir nni==2.7 tqdm "typeguard<3" filelock==3.10 jupyterlab notebook ipywidgets seaborn
 
 
 WORKDIR /root
